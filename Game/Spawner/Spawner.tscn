@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://co6c3mxk6awq6"]
+
+[ext_resource type="Script" path="res://Game/Spawner/Spawner.gd" id="1_8gof1"]
+
+[sub_resource type="Curve2D" id="1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1160, 0, 0, 0, 0, 0, 1160, 648, 0, 0, 0, 0, 8, 648, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Spawner" type="Path2D"]
+curve = SubResource("1")
+script = ExtResource("1_8gof1")
+
+[node name="EnemySpawnerTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+
+[connection signal="timeout" from="EnemySpawnerTimer" to="." method="_on_enemy_spawner_timer_timeout"]

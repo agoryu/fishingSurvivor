@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhphgtw7w6pat"]
+
+[ext_resource type="Script" path="res://UI/PowerUp/ReduceThrowingLineTime.gd" id="1_msgjv"]
+
+[node name="ReduceThrowingLineTime" type="Button"]
+size_flags_horizontal = 3
+text = "Reduce throwing line time"
+script = ExtResource("1_msgjv")
+
+[connection signal="button_up" from="." to="." method="action"]

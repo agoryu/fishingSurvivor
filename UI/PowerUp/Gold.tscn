@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c55i7wjggpa4"]
+
+[ext_resource type="Script" path="res://UI/PowerUp/Gold.gd" id="1_n4fax"]
+
+[node name="Gold" type="Button"]
+size_flags_horizontal = 3
+text = "Get Money"
+script = ExtResource("1_n4fax")
+
+[connection signal="button_up" from="." to="." method="action"]

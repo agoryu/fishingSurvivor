@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://bucklox3anwfb"]
+
+[ext_resource type="Script" path="res://UI/FishingMode/FishingMode.gd" id="1_52anh"]
+[ext_resource type="PackedScene" uid="uid://8wl0pkxno1rl" path="res://UI/ResultFishing/ResultFishing.tscn" id="2_nj666"]
+[ext_resource type="Texture2D" uid="uid://yrfal5552als" path="res://UI/FishingMode/path113.png" id="3_8jh4d"]
+[ext_resource type="Texture2D" uid="uid://bebbcwm5r3250" path="res://UI/FishingMode/path114.png" id="4_n5bqo"]
+[ext_resource type="Texture2D" uid="uid://piq5qwe7iir8" path="res://UI/FishingMode/path234.svg" id="5_t2f2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1wc2"]
+radius = 96.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enxon"]
+radius = 32.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cvh1"]
+size = Vector2(10.5, 10.5)
+
+[node name="FishingMode" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_52anh")
+
+[node name="ResultFishing" parent="." instance=ExtResource("2_nj666")]
+visible = false
+
+[node name="Zone2" type="Area2D" parent="."]
+position = Vector2(576, 320)
+collision_layer = 8
+collision_mask = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="Zone2"]
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(2.34146, 2.34146)
+texture = ExtResource("3_8jh4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone2"]
+shape = SubResource("CircleShape2D_j1wc2")
+debug_color = Color(0.843137, 0.360784, 0.301961, 0.419608)
+
+[node name="Zone1" type="Area2D" parent="."]
+position = Vector2(576, 320)
+collision_layer = 4
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone1"]
+shape = SubResource("CircleShape2D_enxon")
+debug_color = Color(0.772549, 0.282353, 0.843137, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="Zone1"]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(0.780488, 0.780488)
+texture = ExtResource("4_n5bqo")
+
+[node name="Cursor" type="Area2D" parent="."]
+position = Vector2(576, 320)
+collision_layer = 16
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Cursor"]
+position = Vector2(3.8147e-06, -7.62939e-06)
+scale = Vector2(3.01176, 3.01176)
+texture = ExtResource("5_t2f2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor"]
+position = Vector2(128, 0)
+shape = SubResource("RectangleShape2D_8cvh1")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="area_entered" from="Zone2" to="." method="_on_zone_2_area_entered"]
+[connection signal="area_entered" from="Zone1" to="." method="_on_zone_1_area_entered"]

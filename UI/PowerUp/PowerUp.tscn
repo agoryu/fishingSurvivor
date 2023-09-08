@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhvvdrfdg7dnx"]
+
+[ext_resource type="Script" path="res://UI/PowerUp/PowerUp.gd" id="1_uhg05"]
+
+[node name="PowerUp" type="Button"]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "default"
+script = ExtResource("1_uhg05")
+
+[connection signal="button_up" from="." to="." method="action"]
