@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var message = $VBoxContainer/MessageComponent
 @onready var progressbar = $VBoxContainer/ProgressBar
+@onready var lvl_menu = $LvlUpMenu
 
 func congratulation():
 	message.congratulation()
@@ -21,4 +22,5 @@ func add_xp(value: int) -> bool:
 
 func lvl_up():
 	message.lvl_up()
+	lvl_menu.visible = true
 	progressbar.max_value += 1

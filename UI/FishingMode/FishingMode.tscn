@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://piq5qwe7iir8" path="res://UI/FishingMode/path234.svg" id="5_t2f2w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1wc2"]
-radius = 96.0
+radius = 88.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_enxon"]
-radius = 32.0
+radius = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cvh1"]
 size = Vector2(10.5, 10.5)
@@ -28,8 +28,8 @@ collision_layer = 8
 collision_mask = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="Zone2"]
-position = Vector2(-1.90735e-06, 0)
-scale = Vector2(2.34146, 2.34146)
+position = Vector2(-3.57628e-06, 6.91414e-06)
+scale = Vector2(2.14634, 2.14634)
 texture = ExtResource("3_8jh4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zone2"]
@@ -46,8 +46,8 @@ shape = SubResource("CircleShape2D_enxon")
 debug_color = Color(0.772549, 0.282353, 0.843137, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="Zone1"]
-position = Vector2(-4.76837e-07, 0)
-scale = Vector2(0.780488, 0.780488)
+position = Vector2(1.23978e-05, -1.23978e-05)
+scale = Vector2(0.390244, 0.390244)
 texture = ExtResource("4_n5bqo")
 
 [node name="Cursor" type="Area2D" parent="."]

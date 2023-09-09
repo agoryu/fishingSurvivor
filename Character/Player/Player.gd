@@ -13,8 +13,9 @@ enum {NOT_FISHING, THROW_LINE, FISHING, WAIT}
 @export var drag := 5.0
 @export var speed = 300.0
 
-@export var throw_line_time = 3
+@export var throw_line_time = 2.5
 @export var fishing_time = 1.5
+@export var wait_time = 2.0
 
 @onready var player_collision = $Area2D/CollisionShape2D
 @onready var fishing_timer = $FishingTimer
@@ -27,6 +28,7 @@ var gold = 0
 
 func _ready():
 	fishing_timer.wait_time = throw_line_time
+	wait_timer.wait_time = wait_time
 	zone.color = default_color
 
 func _physics_process(delta):
@@ -73,3 +75,4 @@ func wait():
 	player_collision.disabled = true
 	zone.color = wait_color
 	wait_timer.start()
+	fishing_timer.wait_time = throw_line_time

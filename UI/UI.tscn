@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvi8fpgf7m8m5"]
+[gd_scene load_steps=4 format=3 uid="uid://cvi8fpgf7m8m5"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_hu6vk"]
 [ext_resource type="PackedScene" uid="uid://ddyiki3b8t4yj" path="res://UI/MessageComponent/MessageComponent.tscn" id="1_o3ve5"]
+[ext_resource type="PackedScene" uid="uid://cx6v6laxly4f3" path="res://UI/LvlUpMenu/LvlUpMenu.tscn" id="2_8ujgf"]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_hu6vk")
+
+[node name="LvlUpMenu" parent="." instance=ExtResource("2_8ujgf")]
+visible = false
+offset_left = -224.0
+offset_top = -75.0
+offset_right = 224.0
+offset_bottom = 75.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 10

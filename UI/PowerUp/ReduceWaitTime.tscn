@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://2gottoq80s05"]
+
+[ext_resource type="Script" path="res://UI/PowerUp/ReduceWaitTime.gd" id="1_2a80g"]
+
+[node name="ReduceWaitTime" type="Button"]
+text = "Diminue le temps d'attente après une tentative de pêche"
+script = ExtResource("1_2a80g")

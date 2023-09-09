@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv2mshjg57heh"]
+
+[ext_resource type="Script" path="res://UI/PowerUp/IncreaseFishingTime.gd" id="1_m4rdp"]
+
+[node name="IncreaseFishingTime" type="Button"]
+text = "Augmente le temps de pêche"
+script = ExtResource("1_m4rdp")
+nb_time = 10
