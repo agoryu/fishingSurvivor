@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx6v6laxly4f3"]
+[gd_scene load_steps=7 format=3 uid="uid://cx6v6laxly4f3"]
 
 [ext_resource type="Script" path="res://UI/LvlUpMenu/LvlUpMenu.gd" id="1_lhk7b"]
+[ext_resource type="Resource" uid="uid://cah3mnoctkeai" path="res://Resources/PowerUp/Gold.tres" id="2_lf5rx"]
+[ext_resource type="Resource" uid="uid://b1h5oobq3uipo" path="res://Resources/PowerUp/IncreaseFishingTime.tres" id="3_7t3w5"]
+[ext_resource type="Resource" uid="uid://dob5k8sb3npq7" path="res://Resources/PowerUp/ReduceThrowingLineTime.tres" id="4_hnxcv"]
+[ext_resource type="Resource" uid="uid://dl0a0udw5cdsw" path="res://Resources/PowerUp/ReduceWaitTime.tres" id="5_x7tf4"]
+[ext_resource type="Resource" uid="uid://by2j0dr0qlfi5" path="res://Resources/PowerUp/IncreaseAreaFishing.tres" id="6_dulms"]
 
 [node name="LvlUpMenu" type="Panel"]
 anchors_preset = 8
@@ -15,6 +20,7 @@ offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lhk7b")
+powerup_resources = [ExtResource("2_lf5rx"), ExtResource("3_7t3w5"), ExtResource("4_hnxcv"), ExtResource("5_x7tf4"), ExtResource("6_dulms")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

@@ -27,7 +27,7 @@ func _process(delta):
 			is_expansion = true
 		elif cursor.scale.x > 1 and is_expansion:
 			is_expansion = false
-		cursor.scale += Vector2(0.01, 0.01) * (1 if is_expansion else -1)
+		cursor.scale += Vector2(0.03, 0.03) * (1 if is_expansion else -1)
 		
 func _input(event):
 	if visible and event.is_action_released("ui_accept"):
@@ -44,11 +44,9 @@ func reset():
 
 func _on_zone_1_area_entered(area):
 	is_in_zone1 = true
-	print("zone 1")
 
 func _on_zone_2_area_entered(area):
 	is_in_zone2 = true
-	print("zone 2")
 
 func finish_fishing():
 	if player.fish_fishing.strength <= 0 or player.fish_fishing.limit <= 0:

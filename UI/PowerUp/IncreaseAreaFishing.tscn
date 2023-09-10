@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctpomubqxu43m"]
+
+[ext_resource type="Script" path="res://UI/PowerUp/IncreaseAreaFishing.gd" id="1_4nyh2"]
+
+[node name="IncreaseAreaFishing" type="Button"]
+text = "Augmente la zone de pêche"
+script = ExtResource("1_4nyh2")
+
+[connection signal="button_up" from="." to="." method="action"]

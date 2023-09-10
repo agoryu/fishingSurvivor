@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PowerUpResource" load_steps=3 format=3 uid="uid://dl0a0udw5cdsw"]
+
+[ext_resource type="PackedScene" uid="uid://2gottoq80s05" path="res://UI/PowerUp/ReduceWaitTime.tscn" id="1_d1ayw"]
+[ext_resource type="Script" path="res://Resources/PowerUp/PowerUpResource.gd" id="1_yvdlk"]
+
+[resource]
+script = ExtResource("1_yvdlk")
+limit = 5
+probability = 2
+value = 0.2
+button_scene = ExtResource("1_d1ayw")
+description = "reduce wait time"

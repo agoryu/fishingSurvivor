@@ -3,5 +3,8 @@
 [ext_resource type="Script" path="res://UI/PowerUp/ReduceWaitTime.gd" id="1_2a80g"]
 
 [node name="ReduceWaitTime" type="Button"]
-text = "Diminue le temps d'attente après une tentative de pêche"
+text = "Diminue le temps d'attente 
+après une tentative de pêche"
 script = ExtResource("1_2a80g")
+
+[connection signal="button_up" from="." to="." method="action"]

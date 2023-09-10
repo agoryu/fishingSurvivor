@@ -1,5 +1,5 @@
 extends PowerUp
 
 func action():
-	player.throw_line_time -=0.2
+	player.throw_line_time -= resource.value
 	super.action()

@@ -17,10 +17,10 @@ enum {NOT_FISHING, THROW_LINE, FISHING, WAIT}
 @export var fishing_time = 1.5
 @export var wait_time = 2.0
 
-@onready var player_collision = $Area2D/CollisionShape2D
-@onready var fishing_timer = $FishingTimer
+@onready var player_collision: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var fishing_timer: Timer = $FishingTimer
 @onready var zone = $ColorRect
-@onready var wait_timer = $WaitTimer
+@onready var wait_timer: Timer = $WaitTimer
 
 var fish_fishing : Fish
 var state = NOT_FISHING

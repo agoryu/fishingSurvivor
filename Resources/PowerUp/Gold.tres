@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PowerUpResource" load_steps=3 format=3 uid="uid://cah3mnoctkeai"]
+
+[ext_resource type="Script" path="res://Resources/PowerUp/PowerUpResource.gd" id="1_11t3s"]
+[ext_resource type="PackedScene" uid="uid://c55i7wjggpa4" path="res://UI/PowerUp/Gold.tscn" id="1_tyf5c"]
+
+[resource]
+script = ExtResource("1_11t3s")
+limit = 100
+probability = 1
+value = 10.0
+button_scene = ExtResource("1_tyf5c")
+description = "gold"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PowerUpResource" load_steps=2 format=3 uid="uid://cxbowo6jkbl51"]
+
+[ext_resource type="Script" path="res://Resources/PowerUp/PowerUpResource.gd" id="1_tlgkq"]
+
+[resource]
+script = ExtResource("1_tlgkq")
+limit = 2
+probability = 1
+value = 0.2
+description = ""

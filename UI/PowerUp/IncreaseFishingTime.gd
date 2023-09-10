@@ -1,5 +1,5 @@
 extends PowerUp
 
 func action():
-	player.fishing_time += 0.2
+	player.fishing_time += resource.value
 	super.action()

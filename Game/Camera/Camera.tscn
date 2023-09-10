@@ -8,3 +8,4 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
 [node name="Spawner" parent="." instance=ExtResource("1_lvpke")]
+position = Vector2(-576, -328)

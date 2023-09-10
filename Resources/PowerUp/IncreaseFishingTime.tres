@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PowerUpResource" load_steps=3 format=3 uid="uid://b1h5oobq3uipo"]
+
+[ext_resource type="PackedScene" uid="uid://bv2mshjg57heh" path="res://UI/PowerUp/IncreaseFishingTime.tscn" id="1_fapjv"]
+[ext_resource type="Script" path="res://Resources/PowerUp/PowerUpResource.gd" id="1_fv775"]
+
+[resource]
+script = ExtResource("1_fv775")
+limit = 10
+probability = 3
+value = 0.1
+button_scene = ExtResource("1_fapjv")
+description = "increase fishing time"

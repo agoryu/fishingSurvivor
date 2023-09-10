@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PowerUpResource" load_steps=2 format=3 uid="uid://cotekpcodm4g4"]
+
+[ext_resource type="Script" path="res://Resources/PowerUp/PowerUpResource.gd" id="1_yjb6p"]
+
+[resource]
+script = ExtResource("1_yjb6p")
+limit = 5
+probability = 1
+value = 0.5
+description = "slow down fishing mode"

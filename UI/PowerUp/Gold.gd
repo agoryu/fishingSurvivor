@@ -1,5 +1,5 @@
 extends PowerUp
 
 func action():
-	player.gold += 100
+	player.gold += resource.value
 	super.action()

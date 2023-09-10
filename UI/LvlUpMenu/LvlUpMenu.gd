@@ -2,17 +2,16 @@ extends Panel
 
 @onready var container = $VBoxContainer/HBoxContainer
 
-var actions = {
-	"res://UI/PowerUp/Gold.tscn": 100,
-	"res://UI/PowerUp/ReduceThrowingLineTime.tscn": 5,
-	"res://UI/PowerUp/IncreaseFishingTime.tscn": 10,
-	"res://UI/PowerUp/ReduceWaitTime.tscn": 7
-}
+@export var powerup_resources: Array
+var actions: Array
 
 var player: Player = preload("res://Character/Player/Player.tscn").instantiate()
 
 func _ready():
 	_on_visibility_changed()
+	for resource in powerup_resources:
+		for i in range(resource.probability):
+			actions.append(resource)
 
 func _on_visibility_changed():
 	if container == null:
@@ -25,17 +24,18 @@ func _on_visibility_changed():
 	else:
 		for i in range(3):
 			var action_index = randi() % actions.size()
-			var action = actions.keys()[action_index]
-			var button = load(action).instantiate()
+			var actionResource = actions[action_index]
+			var button = actionResource.button_scene.instantiate()
 			button.close_powerup.connect(select_powerup)
 			button.player = player
+			button.resource = actionResource
 			container.add_child(button)
 			if i == 0:
 				button.grab_focus()
 			
 func select_powerup(button_selected: PowerUp):
-	actions[button_selected.scene_file_path] -= 1
-	var action = actions[button_selected.scene_file_path]
-	if action <= 0:
-		actions.erase(action)
+	button_selected.resource.limit -= 1
+	if button_selected.resource.limit <= 0:
+		for i in range(button_selected.resource.probability):
+			actions.erase(button_selected.resource)
 	visible = false
