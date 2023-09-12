@@ -6,6 +6,8 @@ signal fishing
 
 enum {NOT_FISHING, THROW_LINE, FISHING, WAIT}
 
+@export var fishing_mode : Node
+
 @export var default_color : Color
 @export var throw_line_color : Color
 @export var fishing_color : Color

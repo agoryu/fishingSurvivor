@@ -7,6 +7,8 @@ signal fishing_failed
 @onready var collider = $Cursor/CollisionShape2D
 @onready var timer = $Timer
 @onready var result_fiching = $ResultFishing
+@onready var zone1 = $Zone1
+@onready var zone2 = $Zone2
 
 var player: Player
 
@@ -14,6 +16,8 @@ var is_expansion = false
 var is_in_zone1 = false
 var is_in_zone2 = false
 var is_paused = false
+var boost_fishing = 0
+var cursor_speed = 0.03
 
 func _process(delta):
 	if not visible:
@@ -27,7 +31,7 @@ func _process(delta):
 			is_expansion = true
 		elif cursor.scale.x > 1 and is_expansion:
 			is_expansion = false
-		cursor.scale += Vector2(0.03, 0.03) * (1 if is_expansion else -1)
+		cursor.scale += Vector2(cursor_speed, cursor_speed) * (1 if is_expansion else -1)
 		
 func _input(event):
 	if visible and event.is_action_released("ui_accept"):
@@ -58,16 +62,18 @@ func finish_fishing():
 func fishing():
 	var fish = player.fish_fishing
 	if is_in_zone1:
-		fish.strength -= 2
+		fish.strength -= 2 + boost_fishing
 		result_fiching.perfect()
 	elif is_in_zone2:
-		fish.strength -= 1
+		fish.strength -= 1 + boost_fishing
 		result_fiching.great()
 	else:
 		result_fiching.failed()
 	fish.limit -= 1
 
-
 func _on_visibility_changed():
 	if visible:
 		player.fish_fishing.capture()
+		
+func boost_strength_fishing(value: int):
+	boost_fishing += value

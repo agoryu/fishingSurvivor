@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0p1vcmj7gb3d"]
+
+[ext_resource type="PackedScene" uid="uid://bhvvdrfdg7dnx" path="res://UI/PowerUp/PowerUp.tscn" id="1_miunu"]
+[ext_resource type="Script" path="res://UI/PowerUp/IncreaseAreaZone2.gd" id="2_1lpir"]
+
+[node name="IncreaseAreaZone2" instance=ExtResource("1_miunu")]
+text = "Augmente la zone 2 du mode péche"
+script = ExtResource("2_1lpir")

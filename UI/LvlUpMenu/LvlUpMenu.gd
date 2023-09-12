@@ -5,7 +5,7 @@ extends Panel
 @export var powerup_resources: Array
 var actions: Array
 
-var player: Player = preload("res://Character/Player/Player.tscn").instantiate()
+var player: Player
 
 func _ready():
 	_on_visibility_changed()

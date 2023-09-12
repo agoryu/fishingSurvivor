@@ -11,8 +11,13 @@ script = ExtResource("1_o3kki")
 
 [node name="Background" parent="." instance=ExtResource("3_31bbf")]
 
-[node name="Player" parent="." instance=ExtResource("4_781sa")]
+[node name="Player" parent="." node_paths=PackedStringArray("fishing_mode") instance=ExtResource("4_781sa")]
 position = Vector2(592, 328)
+fishing_mode = NodePath("../FishingMode")
+drag = null
+speed = null
+throw_line_time = null
+wait_time = null
 
 [node name="FishingMode" parent="." instance=ExtResource("5_lhm6u")]
 visible = false
