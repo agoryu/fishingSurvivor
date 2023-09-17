@@ -6,7 +6,7 @@ extends Node2D
 @onready var ui = $UI
 
 func _ready():
-	fishing_mode.player = player
+	Game.player = player
 
 func _on_player_fishing():
 	fishing_mode.visible = true

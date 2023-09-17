@@ -5,8 +5,6 @@ extends Panel
 @export var powerup_resources: Array
 var actions: Array
 
-var player: Player
-
 func _ready():
 	_on_visibility_changed()
 	for resource in powerup_resources:
@@ -26,8 +24,8 @@ func _on_visibility_changed():
 			var action_index = randi() % actions.size()
 			var actionResource = actions[action_index]
 			var button = actionResource.button_scene.instantiate()
+			button.player = Game.player
 			button.close_powerup.connect(select_powerup)
-			button.player = player
 			button.resource = actionResource
 			container.add_child(button)
 			if i == 0:

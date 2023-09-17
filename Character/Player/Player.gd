@@ -20,8 +20,8 @@ enum {NOT_FISHING, THROW_LINE, FISHING, WAIT}
 @export var wait_time = 2.0
 
 @onready var player_collision: CollisionShape2D = $Area2D/CollisionShape2D
-@onready var fishing_timer: Timer = $FishingTimer
-@onready var zone = $ColorRect
+@onready var fishing_timer = $FishingTimer
+@onready var zone: Sprite2D = $Sprite2D
 @onready var wait_timer: Timer = $WaitTimer
 
 var fish_fishing : Fish
@@ -31,7 +31,7 @@ var gold = 0
 func _ready():
 	fishing_timer.wait_time = throw_line_time
 	wait_timer.wait_time = wait_time
-	zone.color = default_color
+	zone.modulate = default_color
 
 func _physics_process(delta):
 	if state == NOT_FISHING or state == WAIT:
@@ -44,7 +44,7 @@ func _physics_process(delta):
 func _input(event):
 	if state == NOT_FISHING and event.is_action_pressed("ui_accept"):
 		fishing_timer.start()
-		zone.color = fishing_color
+		zone.modulate = fishing_color
 		state = THROW_LINE
 
 func get_gamepad_direction():
@@ -61,7 +61,7 @@ func _on_area_2d_body_entered(body: Fish):
 func _on_fishing_timer_timeout():
 	if state == THROW_LINE:
 		player_collision.disabled = false
-		zone.color = throw_line_color
+		zone.modulate = throw_line_color
 		state = FISHING
 		fishing_timer.wait_time = fishing_time
 		fishing_timer.start()
@@ -70,11 +70,11 @@ func _on_fishing_timer_timeout():
 
 func _on_wait_timer_timeout():
 	state = NOT_FISHING
-	zone.color = default_color
+	zone.modulate = default_color
 
 func wait():
 	state = WAIT
 	player_collision.disabled = true
-	zone.color = wait_color
+	zone.modulate = wait_color
 	wait_timer.start()
 	fishing_timer.wait_time = throw_line_time

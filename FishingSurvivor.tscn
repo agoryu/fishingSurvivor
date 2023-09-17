@@ -2,22 +2,18 @@
 
 [ext_resource type="Script" path="res://FishingSurvivor.gd" id="1_o3kki"]
 [ext_resource type="PackedScene" uid="uid://cvi8fpgf7m8m5" path="res://UI/UI.tscn" id="2_y3fl7"]
-[ext_resource type="PackedScene" uid="uid://bh6iad2ewcp8a" path="res://Background/Background.tscn" id="3_31bbf"]
+[ext_resource type="PackedScene" uid="uid://bvmhranfdi0lv" path="res://Background/BackgroundFull.tscn" id="3_s26tx"]
 [ext_resource type="PackedScene" uid="uid://b7ty1jrbmbk73" path="res://Character/Player/Player.tscn" id="4_781sa"]
 [ext_resource type="PackedScene" uid="uid://bucklox3anwfb" path="res://UI/FishingMode/FishingMode.tscn" id="5_lhm6u"]
 
 [node name="FishingSurvivor" type="Node2D"]
 script = ExtResource("1_o3kki")
 
-[node name="Background" parent="." instance=ExtResource("3_31bbf")]
+[node name="BackgroundFull" parent="." instance=ExtResource("3_s26tx")]
 
 [node name="Player" parent="." node_paths=PackedStringArray("fishing_mode") instance=ExtResource("4_781sa")]
 position = Vector2(592, 328)
 fishing_mode = NodePath("../FishingMode")
-drag = null
-speed = null
-throw_line_time = null
-wait_time = null
 
 [node name="FishingMode" parent="." instance=ExtResource("5_lhm6u")]
 visible = false

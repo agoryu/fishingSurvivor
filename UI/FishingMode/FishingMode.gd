@@ -10,8 +10,6 @@ signal fishing_failed
 @onready var zone1 = $Zone1
 @onready var zone2 = $Zone2
 
-var player: Player
-
 var is_expansion = false
 var is_in_zone1 = false
 var is_in_zone2 = false
@@ -53,14 +51,15 @@ func _on_zone_2_area_entered(area):
 	is_in_zone2 = true
 
 func finish_fishing():
-	if player.fish_fishing.strength <= 0 or player.fish_fishing.limit <= 0:
-		if player.fish_fishing.strength <= 0:
+	if (Game.player.fish_fishing.strength <= 0 
+		or Game.player.fish_fishing.limit <= 0):
+		if Game.player.fish_fishing.strength <= 0:
 			emit_signal("fishing_success")
-		elif player.fish_fishing.limit <= 0:
+		elif Game.player.fish_fishing.limit <= 0:
 			emit_signal("fishing_failed")
 		
 func fishing():
-	var fish = player.fish_fishing
+	var fish = Game.player.fish_fishing
 	if is_in_zone1:
 		fish.strength -= 2 + boost_fishing
 		result_fiching.perfect()
@@ -73,7 +72,7 @@ func fishing():
 
 func _on_visibility_changed():
 	if visible:
-		player.fish_fishing.capture()
+		Game.player.fish_fishing.capture()
 		
 func boost_strength_fishing(value: int):
 	boost_fishing += value
